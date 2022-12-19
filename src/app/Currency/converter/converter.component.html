@@ -1,0 +1,16 @@
+<h1>Conversion de devises</h1>
+<form>
+    <input type="text" value="0" #txt>
+    From: <select #from>
+        <option [value]="d.symbol" *ngFor="let d of devises$ |async">{{d.symbol}}</option>
+    </select>
+    <br>
+    <input type="button" value="convertir" (click)="convertir(txt.value, from.value, to.value)">
+    <br>
+    <input type="text" [(ngModel)]="montantConverti" name="txtResultat">
+
+    To: <select #to>
+        <option [value]="d.symbol" *ngFor="let d of devises$ |async">{{d.symbol}}</option>
+    </select>
+</form>
+
